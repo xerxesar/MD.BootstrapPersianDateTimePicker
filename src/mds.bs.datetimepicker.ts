@@ -1758,7 +1758,10 @@ data-bs-toggle="dropdown" aria-expanded="false">
         return;
       }
       setTimeout(() => {
-        popover.setContent({
+        let _popover = popover as any;
+        console.log({_popover});
+        
+        _popover._config.content = ({
           '.popover-header': dtpInlineHeader,
           '.popover-body': calendarHtml
         });
